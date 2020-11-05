@@ -7,13 +7,10 @@ class Actor < ActiveRecord::Base
   end
 
   def list_roles
-    binding.pry
-    char=self.characters.name
-    sh = self.shows.name
-    array=[]
-    array << characters
-    array << shows
-    array.first
+    
+    char=self.characters.first.name
+    sh = self.shows.first.name
+    "#{char} - #{sh}"
     
     
   end
